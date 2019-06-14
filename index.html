@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chem Randomiser</title>
+
+  <link rel="stylesheet" type="text/css" href="Libs/kekule/themes/default/kekule.css"/>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+
+  <script src="Libs/raphael-min.2.0.1.js"></script>
+  <script src="Libs/jquery-3.4.1.js"></script>
+  <script src="Libs/kekule/kekule.js?modules=io,chemWidget"></script>
+  <script src="Libs/ans.js"></script>
+
+</head>
+
+<body>
+<div id="reagent1" class="equation"></div>
+<div id="plus" class="equation"><img class="eqimg" width="40px" src="images/plus.png" /></div>
+<div id="reagent2" class="equation"></div>
+<div id="arrow" class="equation"><img width="80px" class="eqimg" src="images/arrow.png" /></div>
+<div id="product" class="equation"><img width="50px" class="eqimg" src="images/qmark.png" /></div>
+<br><br>
+<div class="resizable" id="chemViewer" data-widget="Kekule.Editor.Composer"></div></p>
+<div id="operButtons" data-widget="Kekule.Widget.ButtonGroup">
+  <button onclick="saveMolToData()" data-widget="Kekule.Widget.Button">Submit Answer</button>
+  <button onclick="showSolution()" data-widget="Kekule.Widget.Button">Show Solution</button>
+  <button onclick="newReaction()" data-widget="Kekule.Widget.Button">Try Another</button>
+</div>
+<script src="libs/chemrand.js"></script>
+
+</body>
+
+</html>
