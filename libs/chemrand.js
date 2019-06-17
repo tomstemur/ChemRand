@@ -3,6 +3,7 @@ var reagents2 = ["2A","2B","2C","2D"];
 var re1;
 var re2;
 var prod;
+var ansSmiles;
 
 function qGen() {
   re1 = reagents1[Math.floor((Math.random()*reagents1.length))];
@@ -15,10 +16,9 @@ function qGen() {
 
   for (var x=0; x < answers.length; x++) {
     if (answers[x].code == prod) {
-      var ansSmiles = answers[x].smiles;
+      ansSmiles = answers[x].smiles;
     };
   };
-console.log(ansSmiles);
 };
 
 function showSolution() {
@@ -39,10 +39,20 @@ function getChemViewer() {
 };
 
 function saveMolToData() {
-  var mol = getCurrMol();
-  var data = Kekule.IO.saveFormatData(mol, 'smi');
-  console.log(data);
-  return mol;
+  try {
+    var testmol = getCurrMol();
+    var testdata = Kekule.IO.saveFormatData(testmol, 'smi');
+  } catch (err) {
+    $('#product').html('<img width="50px" class="eqimg" src="images/n.png" />');
+  } finally {
+    var mol = getCurrMol();
+    var data = Kekule.IO.saveFormatData(mol, 'smi');
+    if (data == ansSmiles) {
+     $('#product').html('<img width="50px" class="eqimg" src="images/y.png" />');
+    } else {
+     $('#product').html('<img width="50px" class="eqimg" src="images/n.png" />');
+    };
+  };
 };
 
 $(document).ready(qGen());
