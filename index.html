@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Chem Randomiser</title>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="libs/kekule/themes/default/kekule.css"/>
   <link rel="stylesheet" type="text/css" href="style.css"/>
 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <script src="libs/raphael-min.2.0.1.js"></script>
-  <script src="libs/jquery-3.4.1.js"></script>
   <script src="libs/kekule/kekule.js?modules=io,chemWidget"></script>
   <script src="libs/ans.js"></script>
 
 </head>
 
-<body>
-<div id="reagent1" class="equation"></div>
-<div id="plus" class="equation"><img class="eqimg" width="40px" src="images/plus.png" /></div>
-<div id="reagent2" class="equation"></div>
-<div id="arrow" class="equation"><img width="80px" class="eqimg" src="images/arrow.png" /></div>
-<div id="product" class="equation"><img width="50px" class="eqimg" src="images/qmark.png" /></div>
-<br><br>
-<div class="resizable" id="chemViewer" data-widget="Kekule.Editor.Composer"></div></p>
-<div id="operButtons" data-widget="Kekule.Widget.ButtonGroup">
-  <button onclick="saveMolToData()" data-widget="Kekule.Widget.Button">Submit Answer</button>
-  <button onclick="showSolution()" data-widget="Kekule.Widget.Button">Show Solution</button>
-  <button onclick="newReaction()" data-widget="Kekule.Widget.Button">Try Another</button>
-</div>
-<script src="libs/chemrand.js"></script>
-
+<body align="center">
+  <br>
+  <div class="content">
+    <div class="wholePage border rounded">
+      <br>
+      <div id="reagent1" class="equation"></div>
+      <div id="plus" class="equation"><img class="eqimg" width="40px" src="images/plus.png" /></div>
+      <div id="reagent2" class="equation"></div>
+      <div id="arrow" class="equation"><img width="80px" class="eqimg" src="images/arrow.png" /></div>
+      <div id="product" class="equation"><img width="50px" class="eqimg" src="images/qmark.png" /></div>
+      <br><br>
+      <div style="max-width:600px; text-align:left"  id="chemViewer" data-widget="Kekule.Editor.Composer"></div></p>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-primary" onclick="saveMolToData()">Submit Answer</button>
+          <button type="button" class="btn btn-secondary" onclick="showSolution()">Show Solution</button>
+          <button type="button" class="btn btn-info" onclick="newReaction()">Try Another</button>
+        </div>
+      <br><br>
+    </div>
+  </div>
+  <script src="libs/chemrand.js"></script>
 </body>
 
 </html>
