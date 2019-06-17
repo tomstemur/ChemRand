@@ -13,3 +13,13 @@
    display: inline;
    vertical-align: middle;
 }
+
+.wholePage {
+  text-align: center;
+  width: 750px;
+}
+
+.content {
+  max-width:960px;
+  margin:auto;
+}
